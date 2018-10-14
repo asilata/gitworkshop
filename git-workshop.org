@@ -1,0 +1,95 @@
+#+REVEAL_TRANS: fade
+#+OPTIONS: num:nil toc:nil
+#+Title: A hands-on introduction to Git
+
+* Pre-installation
+** Mac users
+   - Open a terminal window.
+   - Visit [[https://brew.sh/]]. Copy and paste the command there into your terminal.
+** If you don't already have a favourite text editor
+   - Visit [[https://atom.io/]] to download and install Atom.
+
+* Why use Git when we have Dropbox?
+** Better revision history
+  - Clearly see who changed what when.
+  - Active control over saving revisions: avoid accidents!
+  - Excellent support for parallel universes.
+  - Entire history saved on the local copy.
+** Optimised for collaboration
+  - No more conflicted copies! Edit whenever you like.
+  - Smooth and transparent merges.
+  - Syncs are /fast/.
+
+* Installation
+  - Mac users: run the following in your terminal.
+    #+BEGIN_SRC bash
+      brew install git
+    #+END_SRC
+  - Windows users: visit [[https://gitforwindows.org/]] and download.
+  - Linux users: install from your package manager.
+
+* Initial setup
+  - Open your terminal windows.
+  - Check that git installed.
+    #+BEGIN_SRC bash
+    git --version
+    #+END_SRC
+  - Run the following commands.
+    #+BEGIN_SRC bash
+    git config --global user.name "[Your Name]"
+    git config --global user.email "[Your Email]"
+    git config --global color.ui auto
+    #+END_SRC
+
+* Let's start a project!
+  - Run the following.
+    #+BEGIN_SRC bash
+    git init testproject
+    #+END_SRC
+  - This creates the ~testproject~ directory, with an empty Git repository in it.
+  - Go into this directory, and have a look around.
+    #+BEGIN_SRC bash
+    ls -a
+    ls .git
+    git status
+    git log
+    #+END_SRC
+
+* Some terminology
+  - Working directory :: The directory containing your project files.
+  - (Local) Git repository :: The ~.git~ directory inside your working directory.
+  - Staging area :: The stuff that you've told Git to add to the next revision.
+  - Commit :: The act of adding the stuff in the staging area as a new revision.
+#  - Remote Git repository :: An outside repository to which your local repository may be (optionally) linked.
+
+* Your first commit
+** Make the changes
+   - Write a small dummy LaTeX file of your choice, save, and compile.
+   - Run the following.
+     #+BEGIN_SRC bash
+     git status
+     #+END_SRC
+
+** Ignoring unnecessary files
+   - Visit [[https://github.com/asilata/.dotfiles]] and save the raw version of the ~gitignore_global~ file. 
+   - Rename it ~.gitignore_global~ and save it to the correct location by running
+     #+BEGIN_SRC bash
+     mv .gitignore_global ~
+     #+END_SRC
+   - Once again, run the following.
+     #+BEGIN_SRC bash
+     git status
+     #+END_SRC
+
+** Stage and commit your changes     
+   - Run the following command. 
+     #+BEGIN_SRC bash
+     git add [name-of-your-latex-file]
+     #+END_SRC
+   - Hello Hello
+
+* What is Git?
+  - A version-control system: set up to record *annotated* changes to your files.
+  - Especially suitable for text files such as LaTeX and other code.
+  - Currently one of the most popular and supported such systems.
+
