@@ -76,33 +76,34 @@
    | ~cp x y~  | Copy file ~x~ to file ~y~          |
    | ~mv x y~  | Move/rename file ~x~ to file ~y~   |
    | ~mkdir x~ | Create directory ~x~               |
-
+   | ~pwd~     | Show current path                  |
 
 * Let's start a project!
 ** Make the repository
-  - Create a directory containing a new Git repository.
-    #+BEGIN_SRC shell session
-    $ git init testproject
-    #+END_SRC
-  - Or, turn an existing directory into a Git repository.
-    #+BEGIN_SRC shell session
-    $ cd [desired-directory]
-    $ git init
-    #+END_SRC
-  - Go into this directory, and have a look around.
-    #+BEGIN_SRC shell session
-    $ ls -a
-    $ ls .git
-    $ git status
-    $ git log
-    #+END_SRC
+   - Create a directory containing a new Git repository.
+     #+BEGIN_SRC shell session
+     $ cd ~
+     $ git init testproject
+     #+END_SRC
+   - Or, turn an existing directory into a Git repository.
+     #+BEGIN_SRC shell session
+     $ cd [desired-directory]
+     $ git init
+     #+END_SRC
+   - Go into this directory, and have a look around.
+     #+BEGIN_SRC shell session
+     $ cd testproject
+     $ ls -a
+     $ ls .git
+     $ git status
+     $ git log
+     #+END_SRC
 
-** Some terminology
-  - Working directory :: The directory containing your project files.
-  - (Local) Git repository :: The ~.git~ directory inside your working directory.
-  - Staging area :: What you've told Git to add to the next revision.
-  - Commit :: The act of recording the staging area as a new revision.
-#  - Remote Git repository :: An outside repository to which your local repository may be (optionally) linked.
+** Some notation
+   - Working directory :: The directory containing your project files.
+   - (Local) Git repository :: The ~.git~ directory inside your working directory.
+   - Staging area :: What you've told Git to add to the next revision.
+   - Commit :: The act of recording the staging area as a new revision.
 
 * Your first commit
 ** Make the changes
