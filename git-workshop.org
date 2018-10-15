@@ -140,3 +140,13 @@
      #+END_SRC
 
 
+
+* Working with remotes
+- Remote (repository) :: An external Git repository that your local repository connects to and syncs with.
+
+Typically, you host a remote on a central hub such as [[https://github.com/][GitHub]], [[https://bitbucket.org/][BitBucket]], or [[https://gitlab.com/][GitLab]].
+Then you and any other collaborators you added can /clone/ this remote to your local machines.
+
+** Authenticating to GitHub with ssh
+   - Head over to [[https://github.com/]] and create a new account.
+   - 
