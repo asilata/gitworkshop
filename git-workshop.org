@@ -117,10 +117,12 @@
    - Visit [[https://github.com/asilata/.dotfiles]] and save the raw version of the ~gitignore_global~ file. 
    - Save it as ~.gitignore_global~ in the home directory.
      #+BEGIN_SRC shell session
-     $ mv .gitignore_global ~
+     $ cd [download-directory]
+     $ mv gitignore_global ~/.gitignore_global
      #+END_SRC
    - Now see what git says.
      #+BEGIN_SRC shell session
+     $ cd ~/testproject
      $ git status
      #+END_SRC
 
@@ -128,6 +130,7 @@
    - Add your new file to the staging area. Then commit.
      #+BEGIN_SRC shell session
      $ git add [name-of-your-latex-file]
+     $ git status
      $ git commit -m "[short descriptive message]"
      #+END_SRC
    - Have a look at what happened.
