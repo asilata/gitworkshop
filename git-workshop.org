@@ -16,43 +16,56 @@
   - Currently one of the most popular and supported such systems.
 
 * Why use Git when we have Dropbox?
-** 
-   #+ATTR_HTML: :height 600px
+   #+ATTR_HTML: :height 550px
+   #+ATTR_REVEAL: :frag roll-in
    [[./images/final.gif]]
 ** Git has better revision history
-  - Clearly see who changed what when.
-  - Active control over saving revisions: avoid accidents!
-  - Excellent support for parallel universes.
-  - Entire history saved on the local copy.
+   - Clearly see who changed what when.
+   - Active control over saving revisions: avoid accidents!
+   - Excellent support for parallel universes.
+   - Entire history saved on the local copy.
 ** Git is optimised for collaboration
-  - No more conflicted copies! Edit whenever you like.
-  - Smooth and transparent merges.
-  - Fast synchronisation.
+   - No more conflicted copies! Edit whenever you like.
+   - Smooth and transparent merges.
+   - Fast synchronisation.
 
 * Installation and basic setup
 ** Installation
-  - Mac users: run the following in your terminal.
-    #+BEGIN_SRC shell session
-    $ brew install git
-    #+END_SRC
-  - Windows users: visit [[https://gitforwindows.org/]] and download.
-  - Linux users: install from your package manager.
+   - Mac users: run the following in your terminal.
+     #+BEGIN_SRC shell session
+     $ brew install git
+     #+END_SRC
+   - Windows users: visit [[https://gitforwindows.org/]] and download.
+   - Linux users: install from your package manager.
+
+** First steps
+   - Open a terminal window and check that git installed correctly.
+     #+BEGIN_SRC shell session
+     $ git --version
+     #+END_SRC
+   - You can get help at any time with these commands.
+     #+BEGIN_SRC shell session
+     $ git help
+     $ man git
+     $ man git-[subcommand]
+     #+END_SRC
+   - The official Git website is a fantastic resource: [[https://git-scm.com]].
 
 ** Initial setup
-  - Open a terminal window and check that git installed.
-    #+BEGIN_SRC shell session
-    $ git --version
-    #+END_SRC
-  - Set up your identity.
-    #+BEGIN_SRC shell session
-    $ git config --global user.name "[Your Name]"
-    $ git config --global user.email "[Your Email]"
-    #+END_SRC
-  - Optionally set up some extras.
-    #+BEGIN_SRC shell session
-    $ git config --global core.editor "atom --wait"
-    $ git config --global color.ui auto
-    #+END_SRC
+   - Let's see what the current configuration is.
+     #+BEGIN_SRC shell session
+     $ git config --list
+     #+END_SRC
+   - Set up your identity.
+     #+BEGIN_SRC shell session
+     $ git config --global user.name "[Your Name]"
+     $ git config --global user.email "[Your Email]"
+     #+END_SRC
+   - Optionally set up some extras.
+     #+BEGIN_SRC shell session
+     $ git config --global core.editor "atom --wait"
+     $ git config --global color.ui auto
+     #+END_SRC
 
 ** Basic terminal glossary
    |-----------+------------------------------------|
