@@ -1,4 +1,4 @@
-#+REVEAL_TRANS: fade
+#+REVEAL_TRANS: linear
 #+REVEAL_PLUGINS: (highlight)
 #+OPTIONS: num:nil toc:nil
 #+Title: A hands-on introduction to Git
@@ -115,10 +115,9 @@
 
 ** Ignore unnecessary files
    - Visit [[https://github.com/asilata/.dotfiles]] and save the raw version of the ~gitignore_global~ file. 
-   - Save it as ~.gitignore_global~ in the home directory.
+   - Move it to the correct location.
      #+BEGIN_SRC shell session
-     $ cd [download-directory]
-     $ mv gitignore_global ~/.gitignore_global
+     $ mv ~/Downloads/gitignore_global ~/.gitignore_global
      #+END_SRC
    - Now see what git says.
      #+BEGIN_SRC shell session
@@ -147,6 +146,25 @@
 Typically, you host a remote on a central hub such as [[https://github.com/][GitHub]], [[https://bitbucket.org/][BitBucket]], or [[https://gitlab.com/][GitLab]].
 Then you and any other collaborators you added can /clone/ this remote to your local machines.
 
-** Authenticating to GitHub with ssh
+** Connecting to GitHub
    - Head over to [[https://github.com/]] and create a new account.
-   - 
+   - We'll follow the instructions at [[https://help.github.com/articles/connecting-to-github-with-ssh/]].
+   - Windows users: follow the instructions at ?? to start your ~ssh-agent~ automatically when you start Git Bash.
+
+** Setting up ssh
+   - Check for existing ssh keys.
+     #+BEGIN_SRC shell session
+     $ ls -al ~/.ssh
+     #+END_SRC
+   - If you don't see any, generate a new one first.
+     #+BEGIN_SRC shell session
+     $ ssh-keygen -t rsa -b 4096 -C "[your email]"
+     #+END_SRC
+   - Save it in the default location suggested, and then enter a passphrase if you want one.
+   - Add your key to the ~ssh-agent~.
+     #+BEGIN_SRC shell session
+     $ ssh-add ~/.ssh/id_rsa
+     #+END_SRC
+
+** Connecting to GitHub with ssh
+   - Copy the contents of ~~/.ssh/id_rsa.pub~ to GitHub.
