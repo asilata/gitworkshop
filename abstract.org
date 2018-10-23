@@ -1,0 +1,3 @@
+* Git workshop abstract
+
+[[https://git-scm.com/][Git]] is a modern, fast, free and open source version control system. Think of it as a supercharged Dropbox replacement for your LaTeX and code files: Git efficiently and cleanly keeps track of who changed what when in your project, and makes it easy to step back and forth between older or parallel versions of your files. It is especially useful for writing files collaboratively. In this interactive workshop, you will learn how to get started with Git and how to use it productively. No experience is necessary. Please bring a computer.
