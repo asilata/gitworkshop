@@ -177,11 +177,83 @@ Then you and any other collaborators you added can /clone/ this remote to your l
      #+BEGIN_SRC shell session
      $ ssh-keygen -t rsa -b 4096 -C "[your email]"
      #+END_SRC
-   - Save it in the default location suggested, and then enter a passphrase if you want one.
+   - Save it in the suggested location, and then enter a passphrase if you want one.
    - Add your key to the ~ssh-agent~.
      #+BEGIN_SRC shell session
      $ ssh-add ~/.ssh/id_rsa
      #+END_SRC
 
 ** Connecting to GitHub with ssh
-   - Copy the contents of ~~/.ssh/id_rsa.pub~ to GitHub.
+   - Open your public key file with your favourite text editor.
+     #+BEGIN_SRC shell session
+     $ atom ~/.ssh/id_rsa.pub &
+     #+END_SRC
+   - Navigate to /GitHub > Settings > SSH and GPG keys > New SSH key/ and copy and paste the contents of the key file there.
+   - Test your connection.
+     #+BEGIN_SRC shell session
+     $ ssh -T git@github.com
+     #+END_SRC
+
+* Let's host our project on GitHub
+** Create your GitHub remote repo
+   - Hit ~+~ in the top right corner of your GitHub account, and then /New repository/.
+   - Call it whatever you like and hit /Create repository/.
+   - Now go to your project and add GitHub as a remote.
+     #+BEGIN_SRC shell session
+     $ cd ~/testproject
+     $ git remote add origin git@github.com:[git-username]/testproject.git
+     $ git remote -v
+     #+END_SRC
+
+** More about remotes and pushing
+   - origin :: The conventional name for your default remote repository.
+   - Push :: The act of sending the changes you committed to your local repository to your remote repository.
+   - Branch :: One of several possible "parallel universes" for your project. The default one is usually called ~master~.
+
+** Pushing to your default remote
+   - Unlike a commit, you don't write a message when you push.
+   - The first time, you need to specify which branch to push to.
+     #+BEGIN_SRC shell session
+     $ git push -u origin master
+     #+END_SRC
+   - Afterwards you can push without specifying the branch.
+     #+BEGIN_SRC shell session
+     $ git push
+     #+END_SRC
+
+* Collaboration and conflicts
+** Some more notation
+   - Cloning :: Getting a full copy of a remote repository as your local repository.
+   - Push access :: Whether you have permission to push onto a repo you cloned. Usually you don't!
+** Find a partner and add them to your repo
+   - Player 1 ::
+     - Navigate to your GitHub repository and then to /Settings > Collaborators/.
+     - Add your partner --- gives them push access.
+   - Player 2 ::
+     - Navigate to the repository.
+     - Under /Clone or download/, select /Clone with SSH/.
+     - Copy the address given, and clone it.
+       #+BEGIN_SRC shell session
+       $ git clone [address] [some-name]
+       #+END_SRC
+** Create some divergence
+   - Modify the *different parts* of the same file, stage, and commit. Then try to push.
+   - Git will complain to the second person who tries to push.
+
+** In order to push, pull first
+   - The remote rejected your changes because your repo was not in sync.
+   - Fetch and merge first. Git will "fast-forward merge".
+     #+BEGIN_SRC shell session
+     $ git fetch
+     $ git merge
+     #+END_SRC
+   - There is a single command to accomplish the above.
+     #+BEGIN_SRC shell session
+     $ git pull
+     #+END_SRC
+
+** Create some conflict
+   - Now modify the same part of the file, stage and commit.
+   - 
+
+
