@@ -58,8 +58,8 @@
      #+END_SRC
    - Set up your identity.
      #+BEGIN_SRC shell session
-     $ git config --global user.name "[Your Name]"
-     $ git config --global user.email "[Your Email]"
+     $ git config --global user.name "Your Name"
+     $ git config --global user.email "Your Email"
      #+END_SRC
    - Optionally set up some extras.
      #+BEGIN_SRC shell session
@@ -75,8 +75,8 @@
    | ~ls~      | List contents of current directory |
    | ~cp x y~  | Copy file ~x~ to file ~y~          |
    | ~mv x y~  | Move/rename file ~x~ to file ~y~   |
-   | ~mkdir x~ | Create directory ~x~               |
-   | ~pwd~     | Show current path                  |
+   | ~mkdir x~ | Make directory ~x~                 |
+   | ~pwd~     | Print working directory            |
 
 * Let's start a project!
 ** Make the repository
@@ -105,7 +105,7 @@
    - Staging area :: What you've told Git to add to the next revision.
    - Commit :: The act of recording the staging area as a new revision.
 
-* Your first commit
+* Changing and committing
 ** Make the changes
    - Write a dummy LaTeX file of your choice, save, and compile.
    - See what Git says.
