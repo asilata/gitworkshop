@@ -138,8 +138,25 @@
      $ git log
      #+END_SRC
 
+** Fixing mistakes
+   - Stage some more changes. To "unstage" them, do a reset.
+     #+BEGIN_SRC shell session
+     $ git reset 
+     #+END_SRC
+   - To throw away any uncommitted changes, do a hard reset. Tread carefully!
+     #+BEGIN_SRC shell session
+     $ git reset --hard
+     #+END_SRC
+   - Now stage and commit some more changes.
 
-
+** Going back in time
+   - You can also recover any of the older, committed versions of your files.
+   - To do this, you can "check out" a file from an older commit.
+     #+BEGIN_SRC shell session
+     $ git checkout [commit] [filename]
+     #+END_SRC
+   - To throw away the changes you (re-)introduced, do a hard reset again.
+     
 * Working with remotes
 - Remote (repository) :: An external Git repository that your local repository connects to and syncs with.
 
