@@ -179,32 +179,25 @@
    - To throw away the changes you (re-)introduced, do a hard reset again.
      
 * Working with remotes
-- Remote (repository) :: An external Git repository that your local repository connects to and syncs with.
+  - Remote (repository) :: An external Git repository that your local repository connects to and syncs with.
+** Connecting to remotes
+   - You can host a remote on service such as [[https://github.com/][GitHub]], [[https://bitbucket.org/][BitBucket]], or [[https://gitlab.com/][GitLab]]. 
+   - You can either /clone/ an existing remote repo to make a local repo, or copy over your local repo to a remote hosting service.
+   - We'll do both today, working with GitHub. The other services are very similar.
 
-Typically, you host a remote on a central hub such as [[https://github.com/][GitHub]], [[https://bitbucket.org/][BitBucket]], or [[https://gitlab.com/][GitLab]].
-Then you and any other collaborators you added can /clone/ this remote to your local machines.
-
-** Connecting to GitHub
-   - Head over to [[https://github.com/]] and create a new account.
-   - We'll follow the instructions at [[https://help.github.com/articles/connecting-to-github-with-ssh/]].
-   - Windows users: follow the instructions at ?? to start your ~ssh-agent~ automatically when you start Git Bash.
-
-** Setting up ssh
+** Connecting to GitHub with ssh
+   - Create an account at [[https://github.com/]].
    - Check for existing ssh keys.
      #+BEGIN_SRC shell session
      $ ls -al ~/.ssh
      #+END_SRC
-   - If you don't see any, generate a new one first.
+   - If you don't see any, generate a new one first. This command creates one with an empty passphrase.
      #+BEGIN_SRC shell session
-     $ ssh-keygen -t rsa -b 4096 -C "[your email]"
+     $ ssh-keygen -t rsa -b 4096 -C "[your email]" -P ""
      #+END_SRC
-   - Save it in the suggested location, and then enter a passphrase if you want one.
-   - Add your key to the ~ssh-agent~.
-     #+BEGIN_SRC shell session
-     $ ssh-add ~/.ssh/id_rsa
-     #+END_SRC
+   - Detailed instructions are at [[https://help.github.com/articles/connecting-to-github-with-ssh/]].
 
-** Connecting to GitHub with ssh
+** Connecting to GitHub with ssh (continued)
    - Open your public key file with your favourite text editor.
      #+BEGIN_SRC shell session
      $ atom ~/.ssh/id_rsa.pub &
@@ -232,11 +225,11 @@ Then you and any other collaborators you added can /clone/ this remote to your l
 
 ** Pushing to your default remote
    - Unlike a commit, you don't write a message when you push.
-   - The first time, you need to specify which "branch" to push to.
+   - The first time, you need to specify that you're pushing your "master" branch to the "origin" remote.
      #+BEGIN_SRC shell session
      $ git push -u origin master
      #+END_SRC
-   - Afterwards you can push without specifying the branch.
+   - Afterwards you can just push.
      #+BEGIN_SRC shell session
      $ git push
      #+END_SRC
