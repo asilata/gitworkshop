@@ -133,7 +133,6 @@
      #+BEGIN_SRC shell session
      $ git add [name-of-your-latex-file]
      $ git status
-     $ git diff
      $ git commit -m "[short descriptive message]"
      #+END_SRC
    - Have a look at what happened.
@@ -141,10 +140,11 @@
      $ git status
      $ git log
      #+END_SRC
+   - Now stage and commit a few more changes.
 
 * Undoing things
 ** Unstaging files
-   - Stage some more changes. You can "unstage" them before committing.
+   - Stage some more changes. You can "unstage" them before committing. 
      #+BEGIN_SRC shell session
      $ git reset
      #+END_SRC
@@ -154,12 +154,12 @@
      $ git reset [filename]
      #+END_SRC
 
-** Throwing away modifications
-   - ⚠ To discard changes in a single file, /check out/ the last committed version.
+** Throwing away unstaged/uncommitted changes
+   - ⚠ To discard unstaged changes in a single file, /check out/ the last staged version.
      #+BEGIN_SRC shell session
      $ git checkout -- [filename]
      #+END_SRC
-   - ⚠ To throw away any uncommitted changes in the entire repo, do a hard reset.
+   - ⚠ To throw away any uncommitted changes, do a hard reset.
      #+BEGIN_SRC shell session
      $ git reset --hard
      #+END_SRC
