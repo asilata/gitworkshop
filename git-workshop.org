@@ -95,8 +95,6 @@
      $ cd testproject
      $ ls -a
      $ ls .git
-     $ git status
-     $ git log
      #+END_SRC
 
 ** Some notation
@@ -107,8 +105,12 @@
 
 * Changing and committing
 ** Make the changes
+   - Check the status of your repo. Do this often!
+     #+BEGIN_SRC shell session
+     $ git status
+     #+END_SRC
    - Write a dummy LaTeX file of your choice, save, and compile.
-   - See what Git says.
+   - Check the status again.
      #+BEGIN_SRC shell session
      $ git status
      #+END_SRC
