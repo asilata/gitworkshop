@@ -16,9 +16,9 @@
   - Currently one of the most popular and supported such systems.
 
 * Why use Git when we have Dropbox?
-   #+ATTR_HTML: :height 550px
-   #+ATTR_REVEAL: :frag roll-in
-   [[./images/final.gif]]
+  #+ATTR_HTML: :height 550px
+  #+ATTR_REVEAL: :frag roll-in
+  [[./images/final.gif]]
 ** Git has better revision history
    - Clearly see who changed what when.
    - Active control over saving revisions: avoid accidents!
@@ -220,18 +220,17 @@ Then you and any other collaborators you added can /clone/ this remote to your l
    - Now go to your project and add GitHub as a remote.
      #+BEGIN_SRC shell session
      $ cd ~/testproject
-     $ git remote add origin git@github.com:[git-username]/testproject.git
+     $ git remote add origin git@github.com:[username]/testproject.git
      $ git remote -v
      #+END_SRC
 
 ** More about remotes and pushing
    - origin :: The conventional name for your default remote repository.
    - Push :: The act of sending the changes you committed to your local repository to your remote repository.
-   - Branch :: One of several possible "parallel universes" for your project. The default one is usually called ~master~.
 
 ** Pushing to your default remote
    - Unlike a commit, you don't write a message when you push.
-   - The first time, you need to specify which branch to push to.
+   - The first time, you need to specify which "branch" to push to.
      #+BEGIN_SRC shell session
      $ git push -u origin master
      #+END_SRC
@@ -246,17 +245,18 @@ Then you and any other collaborators you added can /clone/ this remote to your l
    - Push access :: Whether you have permission to push onto a repo you cloned. Usually you don't!
 ** Find a partner and add them to your repo
    - Player 1 ::
-     - Navigate to your GitHub repository and then to /Settings > Collaborators/.
-     - Add your partner --- gives them push access.
+                 - Navigate to your GitHub repository and then to /Settings > Collaborators/.
+                 - Add your partner --- gives them push access.
    - Player 2 ::
-     - Navigate to the repository.
-     - Under /Clone or download/, select /Clone with SSH/.
-     - Copy the address given, and clone it.
-       #+BEGIN_SRC shell session
-       $ git clone [address] [some-name]
-       #+END_SRC
+                 - Navigate to the repository.
+                 - Under /Clone or download/, select /Clone with SSH/.
+                 - Copy the address given, and clone it.
+                   #+BEGIN_SRC shell session
+                   $ git clone [address] [repo-name]
+                   $ cd [repo-name]
+                   #+END_SRC
 ** Create some divergence
-   - Modify the *different parts* of the same file, stage, and commit. Then try to push.
+   - Modify *different parts* of the same file, stage, and commit. Then try to push.
    - Git will complain to the second person who tries to push.
 
 ** In order to push, pull first
