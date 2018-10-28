@@ -1,0 +1,2 @@
+* MSI Git workshop
+These are the notes for a workshop on Git, delivered at MSI on 29 October 2018. The main file can also be compiled to give a [[https://revealjs.com/][revealjs]] presentation, using [[https://github.com/yjwen/org-reveal][org-reveal]].
