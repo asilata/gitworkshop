@@ -295,4 +295,54 @@
      $ git push
      #+END_SRC
 
+* Branching
+** Branches are parallel universes of your project.
+   - Any work you do in Git happens in some branch. The default one you start off with is called "master".
+     #+BEGIN_SRC shell session
+     $ git branch
+     #+END_SRC
+   - If you want to work on your own for a bit without messing up the default branch, you can make a new branch.
+   - Branching is very fast in Git, so use it extensively!
+** Creating and working with branches
+   - The plain ~git branch~ command lists all the branches, but you can also use it to create a new branch.
+     #+BEGIN_SRC shell session
+     $ git branch testing
+     $ git branch
+     $ git checkout testing
+     $ git branch
+     #+END_SRC
+   - Go ahead and commit some changes in the new branch. It doesn't affect the master branch.
+     #+BEGIN_SRC shell session
+     $ git log --oneline
+     $ git checkout master 
+     $ git log --oneline
+     #+END_SRC
+** Merging changes
+   - If you're happy with your tests and want to put them in the master branch, you can /merge/ them back in.
+     #+BEGIN_SRC shell session
+     $ git checkout master
+     $ git merge testing
+     $ git log --oneline
+     #+END_SRC
+
+* Forking (GitHub-specific)
+  - Usually you can't push to other people's repositories in GitHub.
+  - If you 'Fork' someone's repo, it gets copied (cloned) over to your GitHub page.
+  - Now you can add it as a remote and push to it.
+
+* Git clients
+  - There are lots of Git clients out there. Try out a few, and select the one that works best for you.
+  - Here are just a few of the available options.
+    - The [[https://atom.io/packages/git-control][git-control]] package ---  manage git within atom.
+    - [[https://www.sourcetreeapp.com/][Sourcetree]], [[https://desktop.github.com][GitHub desktop]] --- GUI clients for Mac and Windows.
+    - [[https://www.gitkraken.com/][Git Kraken]] --- GUI client; works on Linux as well.
+    - [[https://magit.vc/][Magit]] --- a Git interface within Emacs. My personal favourite!
+
+* Further references
+  - Try an interactive tutorial at your own pace: [[https://github.com/jlord/git-it-electron]].
+  - Read the Pro Git book: https://git-scm.com/book.
+  - Read the manuals! They are fantastic.
+
+* Thanks!
+
 
