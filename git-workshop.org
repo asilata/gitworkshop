@@ -272,7 +272,32 @@ Then you and any other collaborators you added can /clone/ this remote to your l
      #+END_SRC
 
 ** Create some conflict
-   - Now modify the same part of the file, stage and commit.
-   - 
+   - Now modify the same part of a single file, stage and commit.
+   - Again, try to push, and note that Git complains to the second person.
+   - Pull (or fetch and merge) again. This time, Git will complain about a conflict. Don't panic!
+** Fixing conflicts
+   - See which files need work.
+     #+BEGIN_SRC shell session
+     $ git status
+     #+END_SRC
+   - Open the file(s) listed in your text editor. You will see some conflict markers, such as below.
+     #+BEGIN_SRC style:zenburn
+     <<<<<<< HEAD
+     Hello, world!
+     =======
+     Hello, universe!
+     >>>>>>> origin/master
+     #+END_SRC
+   - Keep the version you like, or mix and match. Delete the conflict markers. Do this at every conflicted section, then save.
+** Fixing conflicts (continued)
+   - Now add all the files again.
+     #+BEGIN_SRC shell session
+     $ git add .
+     #+END_SRC
+   - Then commit as usual, and push if you like.
+     #+BEGIN_SRC shell session 
+     $ git commit -m "Fixed conflict in the greeting."
+     $ git push
+     #+END_SRC
 
 
