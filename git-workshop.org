@@ -1,7 +1,8 @@
 #+REVEAL_TRANS: linear
 #+REVEAL_PLUGINS: (highlight)
-#+OPTIONS: num:nil toc:nil
+#+OPTIONS: num:nil toc:nil timestamp:nil
 #+Title: A hands-on introduction to Git
+#+Author: Asilata Bapat
 
 * Pre-installation
 ** Mac users
@@ -342,6 +343,7 @@
   - Try an interactive tutorial at your own pace: [[https://github.com/jlord/git-it-electron]].
   - Read the Pro Git book: https://git-scm.com/book.
   - Read the manuals! They are fantastic.
+  - The source for this presentation is available at [[https://github.com/asilata/gitworkshop]].
 
 * Thanks!
 
