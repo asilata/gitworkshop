@@ -146,12 +146,12 @@
 ** Unstaging files
    - Stage some more changes. You can "unstage" them before committing. 
      #+BEGIN_SRC shell session
-     $ git reset
+     $ git reset --
      #+END_SRC
    - You can also unstage individual files. Just write the filename after the command.
      #+BEGIN_SRC shell session
      $ git add .
-     $ git reset [filename]
+     $ git reset -- [filename]
      #+END_SRC
 
 ** Throwing away unstaged/uncommitted changes
