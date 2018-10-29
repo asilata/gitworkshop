@@ -40,7 +40,7 @@
    - Linux users: install from your package manager.
 
 ** First steps
-   - Open a terminal window and check that git installed correctly.
+   - Open a terminal window (or Git Bash) and check that git installed correctly.
      #+BEGIN_SRC shell session
      $ git --version
      #+END_SRC
