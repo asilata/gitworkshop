@@ -118,9 +118,10 @@
 
 ** Ignore unnecessary files
    - Visit [[https://github.com/asilata/.dotfiles]] and save the raw version of the ~gitignore_global~ file. 
-   - Move it to the correct location.
+   - Move it to the correct location, and add it as the global ignore file.
      #+BEGIN_SRC shell session
      $ mv ~/Downloads/gitignore_global ~/.gitignore_global
+     $ git config --global core.excludesFile "~/.gitignore_global"
      #+END_SRC
    - Now see what git says.
      #+BEGIN_SRC shell session
